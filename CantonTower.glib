@@ -1,0 +1,40 @@
+##OpenGL GLIB
+Perspective 70
+LookAt  0 70 150  0 75 0  0 1 0
+
+Vertex   texture.vert
+Fragment texture.frag
+Program  Texture  TexUnit 6
+
+Texture2D  6  posx.bmp
+QuadYZ 250. 250. 300 300
+Texture2D  6  negx.bmp
+QuadYZ -250. 250. 300 300
+Texture2D  6  posy.bmp
+QuadXZ 250. 250. 300 300
+Texture2D  6  negy.bmp
+QuadXZ -250. 250. 300 300
+Texture2D  6  posz.bmp
+QuadXY 250. 250. 300 300
+Texture2D  6  negz.bmp
+QuadXY -250. 250. 300 300
+
+CubeMap 6 posx.bmp negx.bmp  posy.bmp negy.bmp   posz.bmp negz.bmp
+
+Vertex   CantonTower.vert
+Fragment CantonTower.frag
+Program  CantonTower       \
+					 uAngleX <-0.7  0.  0.7>         \
+					 uAngleY <-0.7 0.7 0.7>           \
+					 uAngleZ < 0.0  1.  1.>           \
+					 uLightX <-250. 50. 250.>      \
+                     uLightY <-250. 50. 250.>       \
+                     uLightZ <-250. 250. 250.>      \
+					 uKa <0. 0.4 1.0>               \
+					 uKd <0. 0.7 1.0>               \
+					 uKs <0. 0.7 1.0>               \
+					 uShininess <1. 100. 100.> 
+
+Rotate 90 0 -1 0
+Rotate 90 -1 0 0
+Obj CantonTower.obj
